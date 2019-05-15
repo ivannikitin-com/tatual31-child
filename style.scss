@@ -10,6 +10,10 @@ Text Domain: catchpixel
 
 /*Custom Style Code Right Here */
 
+.vc_row {
+  padding: 0 0 100px;
+}
+
 body {
   @media(max-width: 991px) {
     font-size: 16px;

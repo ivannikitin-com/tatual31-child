@@ -9,6 +9,10 @@ Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, cu
 Text Domain: catchpixel
 */
 /*Custom Style Code Right Here */
+.vc_row {
+  padding: 0 0 100px;
+}
+
 @media (max-width: 991px) {
   body {
     font-size: 16px;
