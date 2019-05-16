@@ -28,7 +28,7 @@ Text Domain: catchpixel
 .topbar-items .header-phone span,
 .topbar-items .header-email span,
 .topbar-items .header-address span {
-  color: #fff;
+  color: #666;
   font-size: 25px;
 }
 
