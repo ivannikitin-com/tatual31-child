@@ -377,4 +377,15 @@ a {
 .section-title-wrapper {
   margin-bottom: 30px;
 }
+
+.title-wrap {
+  max-width: 90%;
+  margin-left: auto;
+}
+
+@media (max-width: 991px) {
+  .title-wrap {
+    max-width: 100%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
