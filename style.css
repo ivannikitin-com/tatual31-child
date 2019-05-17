@@ -379,7 +379,7 @@ a {
 }
 
 .title-wrap {
-  max-width: 90%;
+  max-width: calc(90% + 20px);
   margin-left: auto;
 }
 
