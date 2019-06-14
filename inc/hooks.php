@@ -1,6 +1,7 @@
 <?php
 
-function factrie_right_fixed_buttons() {
+// float buttons
+function catchpixel_right_fixed_buttons() {
   ?>
   <div class="fixed-right-buttons">
     <a class="signup" href="#" data-toggle="modal" data-target="#signup"><span class="icon-calendar"></span>Записаться</a>
@@ -24,4 +25,59 @@ function factrie_right_fixed_buttons() {
   <?php
 }
 
-add_action( 'wp_head', 'factrie_right_fixed_buttons', 10 );
+add_action( 'wp_head', 'catchpixel_right_fixed_buttons', 10 );
+
+// Change breadcrubs default on Yost SEO
+function catchpixel_breadcrumbs_change_yost() {
+  ?>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var breadcrumbs = document.getElementById('breadcrumb');
+
+      if (breadcrumbs) {
+        var newBreadcrumbs = '<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );} ?>';
+        breadcrumbs.innerHTML = newBreadcrumbs;
+      }
+      
+    });
+  </script>
+  <?php
+}
+
+add_action( 'wp_footer', 'catchpixel_breadcrumbs_change_yost', 10 );
+
+// Include files after main theme
+add_action( 'after_setup_theme', 'catchpixel_include_files_after_theme' );
+
+function catchpixel_include_files_after_theme() {
+	/**
+ * Custom facture-services
+ */
+// require get_stylesheet_directory() . '/inc/facture-services.php';
+require get_stylesheet_directory() . '/inc/factrie-portfolio.php';
+}
+
+// Custom breadcrumbs Yost SEO
+add_filter( 'wpseo_breadcrumb_links', 'catchpixel_breadcrumbs_change' );
+
+function catchpixel_breadcrumbs_change( $links ) {
+  
+  foreach( $links as $link ) {
+    if (isset($link['term']) && $link['term']->taxonomy == 'portfolio-categories'){
+      $breadcrumb[] = array(
+        'url' => '/tatuazh/',
+        'text' => esc_html__( 'Татуаж', 'catchpixel' ),
+      );
+      array_insert( $links, 1, $breadcrumb );
+    }
+    if (isset($link['term']) && $link['term']->taxonomy == 'portfolio-tags'){
+      $breadcrumb[] = array(
+        'url' => '/tatuazh/',
+        'text' => esc_html__( 'Татуаж', 'catchpixel' ),
+      );
+      array_insert( $links, 1, $breadcrumb );
+    }
+  }
+  
+  return $links;
+}

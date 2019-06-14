@@ -9,7 +9,10 @@
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+.icon-tel,
+.icon-calendar,
+.icon-whatsapp,
+.icon-viber {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
