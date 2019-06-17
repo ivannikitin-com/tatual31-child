@@ -60,12 +60,12 @@ function catchpixel_register_taxes() {
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"query_var" => true,
-		"rewrite" => array( 'slug' => 'portfolio-categories', 'with_front' => true, ),
+		"has_archive" => true,
 		"show_admin_column" => true,
 		"show_in_rest" => true,
 		"rest_base" => "portfolio-categories",
     "rest_controller_class" => "WP_REST_Terms_Controller",
-    "rewrite" => array( "slug" => "tatuazh", "with_front" => true ),
+    "rewrite" => array( "slug" => "tatuazh-category", "with_front" => true ),
 		"show_in_quick_edit" => false,
 		);
 	register_taxonomy( "portfolio-categories", array( "factrie-portfolio" ), $args );

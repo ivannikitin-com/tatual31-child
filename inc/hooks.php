@@ -38,7 +38,7 @@ function catchpixel_breadcrumbs_change_yost() {
         var newBreadcrumbs = '<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );} ?>';
         breadcrumbs.innerHTML = newBreadcrumbs;
       }
-      
+
     });
   </script>
   <?php
@@ -50,18 +50,17 @@ add_action( 'wp_footer', 'catchpixel_breadcrumbs_change_yost', 10 );
 add_action( 'after_setup_theme', 'catchpixel_include_files_after_theme' );
 
 function catchpixel_include_files_after_theme() {
-	/**
- * Custom facture-services
- */
+
 // require get_stylesheet_directory() . '/inc/facture-services.php';
 require get_stylesheet_directory() . '/inc/factrie-portfolio.php';
+
 }
 
 // Custom breadcrumbs Yost SEO
 add_filter( 'wpseo_breadcrumb_links', 'catchpixel_breadcrumbs_change' );
 
 function catchpixel_breadcrumbs_change( $links ) {
-  
+
   foreach( $links as $link ) {
     if (isset($link['term']) && $link['term']->taxonomy == 'portfolio-categories'){
       $breadcrumb[] = array(
@@ -69,6 +68,7 @@ function catchpixel_breadcrumbs_change( $links ) {
         'text' => esc_html__( 'Татуаж', 'catchpixel' ),
       );
       array_insert( $links, 1, $breadcrumb );
+      unset($links[2]);
     }
     if (isset($link['term']) && $link['term']->taxonomy == 'portfolio-tags'){
       $breadcrumb[] = array(
@@ -76,8 +76,9 @@ function catchpixel_breadcrumbs_change( $links ) {
         'text' => esc_html__( 'Татуаж', 'catchpixel' ),
       );
       array_insert( $links, 1, $breadcrumb );
+      unset($links[2]);
     }
   }
-  
+
   return $links;
 }

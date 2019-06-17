@@ -264,22 +264,30 @@ a {
   margin-right: 0;
 }
 
+.page-title-default .page-title {
+  font-size: 100px;
+  line-height: 100px;
+}
+
 @media (max-width: 991px) {
-  h1 {
+  h1,
+  .page-title-default .page-title {
     font-size: 100px;
     line-height: 100px;
   }
 }
 
 @media (max-width: 768px) {
-  h1 {
+  h1,
+  .page-title-default .page-title {
     font-size: 80px;
     line-height: 80px;
   }
 }
 
 @media (max-width: 567px) {
-  h1 {
+  h1,
+  .page-title-default .page-title {
     font-size: 50px;
     line-height: 50px;
   }
@@ -394,5 +402,14 @@ a {
 
 body:not(.home) .section-title-wrapper .section-title {
   font-size: 30px;
+}
+
+.breadcrumb > * {
+  font-size: 22px;
+  font-style: italic;
+}
+
+h1.page-title {
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=style.css.map */

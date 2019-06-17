@@ -242,7 +242,13 @@ a {
   }
 }
 
-h1 {
+.page-title-default .page-title {
+  font-size: 100px;
+  line-height: 100px;
+}
+
+h1,
+.page-title-default .page-title {
   @media(max-width: 991px) {
     font-size: 100px;
     line-height: 100px;
@@ -334,7 +340,7 @@ h1 {
       cursor: pointer;
       transition: all 0.15s linear;
       transform-origin: left;
-      transform: rotateY(15deg)
+      transform: rotateY(15deg);
     }
 
     &:hover {
@@ -366,4 +372,13 @@ body:not(.home) {
   .section-title-wrapper .section-title {
     font-size: 30px;
   }
+}
+
+.breadcrumb > * {
+  font-size: 22px;
+  font-style: italic;
+}
+
+h1.page-title {
+  text-transform: uppercase;
 }
