@@ -133,4 +133,6 @@ body:not(.home) .section-title-wrapper .section-title { font-size: 30px; }
 .breadcrumb > * { font-size: 22px; font-style: italic; }
 
 h1.page-title { text-transform: uppercase; }
+
+.width-1200 { max-width: 1200px; margin: 0 auto; }
 /*# sourceMappingURL=style.css.map */
