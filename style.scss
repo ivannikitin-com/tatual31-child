@@ -357,17 +357,6 @@ h1,
   margin-bottom: 30px;
 }
 
-.home {
-  .title-wrap {
-    max-width: calc(90% + 20px);
-    margin-left: auto;
-  
-    @media(max-width: 991px) {
-      max-width: 100%;
-    }
-  }
-}
-
 body:not(.home) {
   .section-title-wrapper .section-title {
     font-size: 30px;
