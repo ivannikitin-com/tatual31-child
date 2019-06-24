@@ -135,4 +135,8 @@ body:not(.home) .section-title-wrapper .section-title { font-size: 30px; }
 h1.page-title { text-transform: uppercase; }
 
 .width-1200 { max-width: 1200px; margin: 0 auto; }
+
+.isRequired::before { content: "*"; color: #ff0000; }
+
+.wpcf7-checkbox span.wpcf7-list-item { display: block; }
 /*# sourceMappingURL=style.css.map */

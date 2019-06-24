@@ -376,3 +376,18 @@ h1.page-title {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+//forms cf7
+.isRequired {
+  &::before {
+    content: "*";
+    color: #ff0000;
+  }
+}
+
+.wpcf7-checkbox {
+  span.wpcf7-list-item {
+    display: block;
+  }
+}
+
