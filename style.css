@@ -465,4 +465,8 @@ h1.page-title {
 .woocommerce button.button, .woocommerce .product .button, .woocommerce.single .product .button, .woocommerce #review_form #respond .form-submit input {
   border-radius: 0;
 }
+
+.woocommerce-tabs .panel h2 {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
