@@ -391,3 +391,21 @@ h1.page-title {
   }
 }
 
+.portfolio-classic .portfolio-wrap .portfolio-img,
+.portfolio-classic .portfolio-wrap:hover .portfolio-overlay-wrap:before { border-radius: 0; cursor: pointer; }
+
+.portfolio-classic .portfolio-wrap .portfolio-img img { filter: grayscale(100%); }
+
+.portfolio-classic .portfolio-wrap:hover .portfolio-img img { filter: grayscale(0); }
+
+.portfolio-classic .portfolio-icons p a { background-color: #fff; color: #000 !important; }
+
+.portfolio-filter.filter-2 li a:after { background-color: #000; }
+
+.portfolio-filter.filter-2 .active a.portfolio-filter-item { color: #000; }
+
+.portfolio-classic .portfolio-wrap .portfolio-content-wrap { position: absolute; bottom: 0; left: 0; width: 100%; text-align: center; }
+
+.portfolio-classic .portfolio-wrap .portfolio-content-wrap .portfolio-title a,
+.portfolio-categories > span:first-child { color: #fff; }
+
