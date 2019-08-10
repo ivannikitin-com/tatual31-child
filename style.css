@@ -457,4 +457,8 @@ h1.page-title {
 .portfolio-categories > span:first-child {
   color: #fff;
 }
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  text-transform: none;
+}
 /*# sourceMappingURL=style.css.map */
