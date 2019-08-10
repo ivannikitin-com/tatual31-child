@@ -412,3 +412,7 @@ h1.page-title {
 .woocommerce ul.products li.product .woocommerce-loop-product__title {
   text-transform: none;
 }
+
+.woocommerce button.button, .woocommerce .product .button, .woocommerce.single .product .button, .woocommerce #review_form #respond .form-submit input {
+  border-radius: 0;
+}
