@@ -9,10 +9,15 @@ function catchpixel_enqueue_child_theme_styles() {
 
 	wp_enqueue_style( 'factrie-child-theme-fonts-icon', get_stylesheet_directory_uri() . '/fonts/icomoon/style.css', array(), null );
 }
-/**z
+/**
  * Custom functions
  */
 require get_stylesheet_directory() . '/inc/custom-functions.php';
+
+/**
+ * Custom functions
+ */
+require get_stylesheet_directory() . '/inc/woocomerce.php';
 
 /**
  * Custom hooks
