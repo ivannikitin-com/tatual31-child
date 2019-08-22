@@ -163,4 +163,6 @@ h1.page-title { text-transform: uppercase; }
 .woocommerce-tabs .panel h2 { display: none; }
 
 .woocommerce nav.woocommerce-pagination { margin-top: 80px; }
+
+.woocommerce div.product p.stock { font-size: 1.12em; font-weight: bold; }
 /*# sourceMappingURL=style.css.map */
