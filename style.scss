@@ -21,9 +21,13 @@ body {
   }
 }
 
-.site-footer .textwidget img {
-  margin-left: auto;
-  margin-right: auto;
+.site-footer {
+  margin-top: 25px;
+  
+  .textwidget img {
+    margin-left: auto;
+    margin-right: auto;
+  }  
 }
 
 .topbar-items .header-phone span,

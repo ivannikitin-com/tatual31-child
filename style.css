@@ -13,6 +13,8 @@ Text Domain: catchpixel
 
 @media (max-width: 991px) { body { font-size: 16px; line-height: 25px; } }
 
+.site-footer { margin-top: 25px; }
+
 .site-footer .textwidget img { margin-left: auto; margin-right: auto; }
 
 .topbar-items .header-phone span, .topbar-items .header-email span, .topbar-items .header-address span { color: #666; font-size: 25px; }
