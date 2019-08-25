@@ -271,7 +271,6 @@ h1,
 
 // Right buttons fixed
 .fixed-right-buttons {
-
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -302,14 +301,13 @@ h1,
   }
 
   .signup {
-    background-color: #f9ad81;
+    background-color: rgb(237, 184, 168);
     text-transform: uppercase;
     font-weight: 700;
   }
 
   .order-call {
-    background-color: #f5989d;
-
+    background-color: rgb(160, 17, 45);
   }
 }
 

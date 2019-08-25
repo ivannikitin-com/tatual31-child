@@ -110,9 +110,9 @@ a { color: #f9ad81; }
 
 .fixed-right-buttons span { vertical-align: baseline; margin-right: 7px; font-size: 24px; }
 
-.fixed-right-buttons .signup { background-color: #f9ad81; text-transform: uppercase; font-weight: 700; }
+.fixed-right-buttons .signup { background-color: #edb8a8; text-transform: uppercase; font-weight: 700; }
 
-.fixed-right-buttons .order-call { background-color: #f5989d; }
+.fixed-right-buttons .order-call { background-color: #a0112d; }
 
 .modal.custom .close::before, .modal.custom .close::after { content: none; }
 
