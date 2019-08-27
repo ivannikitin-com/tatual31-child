@@ -2,18 +2,23 @@
 // ======================================
 // Редактируемый блок на странице товаров
 // ======================================
-add_action('woocommerce_sidebar', 'catchpixel_edit_block_archive_page', 15);
+add_action('woocommerce_after_shop_loop', 'catchpixel_edit_block_archive_page', 15);
 
 function catchpixel_edit_block_archive_page() {
     ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <?php echo do_shortcode('[content_block slug=blok-dlya-stranitsy-magazina]'); ?>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="arhive-product-custom-block">
+                <?php 
+                if (is_product_category() || is_product_tag()):
+                    do_action('catchpixel_custom_block');
+                else: 
+                    echo do_shortcode('[content_block slug=blok-dlya-stranitsy-magazina]');
+                endif;  
+                ?>
             </div>
         </div>
-    </div>
-    
+    </div>    
     <?php
 }
 // ============================
@@ -80,5 +85,29 @@ function catchpixel_add_meta_field_manufacturer_frontend() {
     
     <span class="manufacturer"><?php echo __( 'Производитель: ', 'catchpixel' ) . $manufacturer; ?></span>
     
+    <?php
+}
+
+// ==========================
+// Переопределение woocommerce
+// ==========================
+
+remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description', 10);
+remove_action( 'woocommerce_archive_description', 'woocommerce_product_archive_description', 10);
+add_action( 'catchpixel_custom_block', 'woocommerce_taxonomy_archive_description', 10);
+add_action( 'catchpixel_custom_block', 'woocommerce_product_archive_description', 10);
+add_action( 'catchpixel_custom_block', 'catchpixel_custom_block_composer', 9 );
+
+function catchpixel_custom_block_composer() {
+    ?>
+    <div class="arhive-product-custom-block__composer">
+        <?php 
+        if( function_exists('get_field') ):
+            $queried_object = get_queried_object();
+
+            echo get_field('advanced_block_category_cat', $queried_object->taxonomy.'_'.$queried_object->term_id);
+        endif;
+        ?>
+    </div>
     <?php
 }
