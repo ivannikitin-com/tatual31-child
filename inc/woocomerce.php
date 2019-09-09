@@ -111,3 +111,67 @@ function catchpixel_custom_block_composer() {
     </div>
     <?php
 }
+
+// ==============================
+// Вывод заголовка по человечески
+// ==============================
+remove_action('woocommerce_before_main_content',  'factrie_woocommerce_before_main_content', 10 );
+add_action('woocommerce_before_main_content',  'catchpixel_woocommerce_before_main_content', 10 );
+function catchpixel_woocommerce_before_main_content(){
+	
+	$woo_class = '';
+	if( is_product() ){
+		$woo_class = ' factrie-single-product';
+	}else{
+		$woo_class = ' factrie-woo';
+	}
+	
+	echo '<div class="factrie-content'. esc_attr( $woo_class ) .'">';	
+	
+	$custom_title = '';
+	$page_id = '';
+	$template_class = array();
+	if( is_shop() ){
+		ob_start();
+		woocommerce_page_title();
+		$custom_title = ob_get_clean();
+		$custom_title = "Products";
+		$page_id = get_option( 'woocommerce_shop_page_id' ); 
+		
+		$page_id = $page_id ? $page_id : get_the_ID();
+	
+		$template = 'woo';
+		$aps = new FactriePostSettings;
+		$aps->factrieSetPostTemplate( $template );
+		$template_class = $aps->factrieTemplateContentClass( $page_id );
+		$ahe = new FactrieHeaderElements;
+		$ahe->factriePageTitle( $template, get_the_title( $page_id ) );
+		
+	}elseif( is_product_category() || is_product_tag() ){
+		$template = 'wooarchive';
+		$aps = new FactriePostSettings;
+		$aps->factrieSetPostTemplate( $template );
+		$template_class = $aps->factrieTemplateContentClass();
+		$ahe = new FactrieHeaderElements;
+		$ahe->factriePageTitle( "woo", $custom_title );
+	}elseif( is_product() ){
+		$custom_title = get_the_title();
+		$ahe = new FactrieHeaderElements;
+		$ahe->factriePageTitle( "single-product", $custom_title );
+	}
+	
+	if( isset( $template_class['content_class'] ) && $template_class['content_class'] != '' ){
+		$content_class = str_replace("md", "lg", $template_class['content_class'] );
+	}else{
+		$content_class = 'col-lg-12';
+	}
+	
+	echo '<div class="factrie-content-inner">
+			<div class="container">	
+				<div class="row">
+					<div class="'. esc_attr( $content_class ) .'">';
+					
+	if( is_shop() || is_product_category() || is_product_tag() ){
+		echo '<div class="woo-top-meta">';
+	}
+}

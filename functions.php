@@ -15,11 +15,6 @@ function catchpixel_enqueue_child_theme_styles() {
 require get_stylesheet_directory() . '/inc/custom-functions.php';
 
 /**
- * Custom functions
- */
-require get_stylesheet_directory() . '/inc/woocomerce.php';
-
-/**
  * Custom hooks
  */
 require get_stylesheet_directory() . '/inc/hooks.php';
@@ -28,4 +23,16 @@ require get_stylesheet_directory() . '/inc/hooks.php';
  * Custom customizer
  */
 require get_stylesheet_directory() . '/inc/custom-customizer.php';
+
+// ======================================================
+// Инифиализация настроек для перекрытия родительской темы
+// ======================================================
+
+add_action( 'after_setup_theme', 'catchpixel_setup_child_theme' );
+function catchpixel_setup_child_theme() {
+	/**
+	 * Custom functions
+	 */
+	require get_stylesheet_directory() . '/inc/woocomerce.php';
+}
 
