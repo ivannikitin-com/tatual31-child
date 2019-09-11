@@ -27,15 +27,15 @@ $template_class = $aps->factrieTemplateContentClass();
 						</div>	
 						
 						<div class="relative mb-2">
-							<h3 class="page-title"><?php esc_html_e( 'Page Not Found', 'factrie' ); ?></h3>
+							<h3 class="page-title"><?php esc_html_e( 'Страница не найдена', 'factrie' ); ?></h3>
 						</div>
 						<?php 
 							$home_url = home_url( '/' ); 
 						?>
 							<p class="error-description">
-								<?php esc_html_e( 'Go Back to ', 'factrie' ); ?>
+								<?php esc_html_e( 'Вернуться на ', 'factrie' ); ?>
 								<a href="<?php echo esc_url( $home_url ); ?>">
-									<?php esc_html_e( 'Home Page', 'factrie' ); ?>
+									<?php esc_html_e( 'Главную страницу', 'factrie' ); ?>
 								</a>
 							</p>
 					</header><!-- .page-header -->

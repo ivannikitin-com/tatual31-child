@@ -435,3 +435,33 @@ h1.page-title {
 .arhive-product-custom-block {
   margin-top: 25px;
 }
+
+.woocommerce,
+.woocommerce-page {
+  img {
+    filter: grayscale(100%);
+    transition: filter 0.15s ease-in-out;
+  }
+
+  ul.products {
+    li.product {
+      &:hover {
+        img {
+          filter: grayscale(0);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-sm-down {
+    display: block !important;
+  }
+}
+
+.image-wrap-404 {
+  img {
+    filter: grayscale(100%);
+  }
+}
